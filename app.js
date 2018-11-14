@@ -8,6 +8,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  socket.emit('chat',{ id:"userid", msg: "hello" } );
 });
 
 var port = process.env.PORT || 3000;
